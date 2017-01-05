@@ -1,0 +1,60 @@
+<div class="form-container">
+    <div *ngIf="isSubmitted" id="success">
+        <h2>You're submission has been processed.</h2>
+        <p>I will be sure to get back to you ASAP. In the meantime, check out some of the sweet articles I have over in my application's <a routerLink="/blog">
+        blog section</a>.</p>
+    </div>
+    <form *ngIf="formView"
+    [formGroup]="contactForm" 
+    (ngSubmit)="onSubmit(contactForm.value)"
+    >
+    <ul class="flex-outer">
+    <li>
+    <label for="name">
+        Your Name:
+    </label>
+        <input 
+            name="name"
+            type="text"
+            [formControl]="contactForm.controls['name']"
+        > 
+        <p *ngIf="!name.valid && name.touched">
+            Name is required.
+        </p>
+    </li>
+    <li>
+        <label for="email">Email Address:</label>
+        <input name="email" type="email" [formControl]="contactForm.controls['email']">
+        <p *ngIf="!email.valid && email.touched">
+            E-mail is required.
+        </p>
+   </li>
+      <li>
+        <label for="phoneNumber">Phone Number:</label>
+        <input name="phoneNumber" type="tel" [formControl]="contactForm.controls['phoneNumber']">
+   </li>
+    <li>
+        <label for="reason">Reason for contact:</label>
+        <select name="reason" id="reason">
+            <option *ngFor="let reason of reasons" [value]="reason">
+                {{reason}}
+            </option>
+        </select>
+      </li>
+    <li>
+        <label for="message">
+            Additional Info:
+        </label>
+        <textarea name="message" id="message" cols="30" rows="10" 
+        [formControl]="contactForm.controls['message']"
+        placeholder="Please provide a little bit more information regarding to why you're contact me today....'"></textarea>
+         <p *ngIf="!message.valid && message.touched">
+            Message must be great than 30 characters. Elaborate a little bit more about the topic :)
+        </p>
+    </li>
+    </ul>
+    <div id="submit-btn">
+            <button type="submit">Submit</button>
+            </div>
+</form> 
+</div>

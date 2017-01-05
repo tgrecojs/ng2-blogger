@@ -1,0 +1,7 @@
+<nav id="nav">
+  <a *ngFor="let nav of navs"
+  [routerLink]="nav.url" 
+    routerLinkActive="active"
+    routerLinkActiveOptions="{exact:true}">
+      {{nav.content}}</a>
+</nav>

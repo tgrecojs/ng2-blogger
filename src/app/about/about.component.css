@@ -1,0 +1,31 @@
+:host {
+    background-color: #EBE8E4;
+    color: #222;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+   #am-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 700px;
+        width: 100%;
+    }
+    #am-content {
+        width: 600px;
+        margin: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    #am-sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 350px;
+    }
+    img {
+    max-width: 300px;
+    max-height: 200px;
+}
